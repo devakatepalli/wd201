@@ -4,7 +4,8 @@
   "main": "todo.js",
   "scripts": {
     "test": "jest",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
