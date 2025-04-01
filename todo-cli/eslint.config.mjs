@@ -1,12 +1,12 @@
 export default [
   {
-    files: ["**/*.js"],
+    files: ['**/*.js'],
     languageOptions: {
-      ecmaVersion: "latest",
+      ecmaVersion: 'latest',
     },
     rules: {
-      "no-unused-vars": "warn",
-      "no-console": "off",
+      'no-unused-vars': 'warn',
+      'no-console': 'off',
     },
   },
 ];
