@@ -11,9 +11,16 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 // A simple route to check if the app is working
-app.get("/", function (request, response) {
-  response.send("Hello World");
+app.get("/", async (request, response) => {
+  try {
+    const todos = await Todo.findAll();  // Fetch todos from DB
+    response.render("index", { todos });  // Render index.ejs with todos data
+  } catch (error) {
+    console.error(error);
+    response.status(500).send("Error loading the page");
+  }
 });
+
 
 // Fetch all todos
 app.get("/todos", async function (_request, response) {
