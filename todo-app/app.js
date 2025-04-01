@@ -2,7 +2,13 @@ const express = require("express");
 const app = express();
 const { Todo } = require("./models");
 const bodyParser = require("body-parser");
+const path = require("path");
+
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, "public")));
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 // A simple route to check if the app is working
 app.get("/", function (request, response) {
@@ -86,5 +92,10 @@ app.delete("/todos/:id", async (request, response) => {
   }
 });
 
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server started on http://localhost:${PORT}`);
+});
 
 module.exports = app;
