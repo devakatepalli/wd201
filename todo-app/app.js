@@ -70,17 +70,19 @@ app.put("/todos/:id/markAsCompleted", async function (request, response) {
 });
 
 // Delete a todo by its ID
-app.delete("/todos/:id", async (req, res) => {
+// app.js
+
+app.delete("/todos/:id", async (request, response) => {
   try {
-    const todo = await Todo.findByPk(req.params.id);
+    const todo = await Todo.findByPk(request.params.id);  // Find the todo by ID
     if (!todo) {
-      return res.status(404).json({ success: false });
+      return response.status(404).json(false);  // Return false if not found (instead of success: false)
     }
-    await todo.destroy();
-    return res.json({ success: true });
+    await todo.destroy();  // Delete the todo
+    return response.json(true);  // Return true if successfully deleted
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ success: false, error: "Internal Server Error" });
+    return response.status(500).json({ success: false, error: "Internal Server Error" });  // Error response for unexpected issues
   }
 });
 
