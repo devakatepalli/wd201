@@ -7,7 +7,7 @@
     "supertest": "^7.1.0"
   },
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "if [ \"$RENDER\" != \"true\" ]; then husky install; fi",
     "test": "jest",
     "dev": "nodemon app.js",
     "start": "node app.js"
