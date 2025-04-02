@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "${MYSQLPASSWORD}",
+    "database": "${MYSQLDATABASE}",
+    "host": "${MYSQLHOST}",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "${MYSQLPASSWORD}",
+    "database": "${MYSQLDATABASE}",
+    "host": "${MYSQLHOST}",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "${MYSQLPASSWORD}",
+    "database": "${MYSQLDATABASE}",
+    "host": "${MYSQLHOST}",
+    "dialect": "mysql"
+  }
+}
