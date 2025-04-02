@@ -11,7 +11,7 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "test": "jest",
-    "prepare": "if [ \"$RENDER\" != \"true\" ]; then husky install; fi"
+    "prepare": "husky install"
   },
 
   "dependencies": {
